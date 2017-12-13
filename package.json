@@ -2,7 +2,7 @@
   "name": "image_resizer_lambda_sharp",
   "version": "1.0.0",
   "description": "resize image with the help of sharp ",
-  "main": "serverless.yml",
+  "main": "handler.js",
   "scripts": {
     "test": "npm test"
   },
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp/issues"
   },
-  "homepage": "https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp#readme"
+  "homepage": "https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp#readme",
+  "dependencies": {
+    "aws-sdk": "^2.169.0",
+    "bluebird": "^3.5.1",
+    "serverless-offline": "^3.16.0",
+    "sharp": "^0.18.4"
+  }
 }
