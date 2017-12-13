@@ -1,0 +1,19 @@
+{
+  "name": "image_resizer_lambda_sharp",
+  "version": "1.0.0",
+  "description": "resize image with the help of sharp ",
+  "main": "serverless.yml",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp.git"
+  },
+  "author": "Manish Kumar Jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp/issues"
+  },
+  "homepage": "https://github.com/Manishjha1991/Image_Resizer_Lambda_Sharp#readme"
+}
