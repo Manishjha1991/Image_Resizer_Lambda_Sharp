@@ -16,7 +16,7 @@ functions:
     handler: handler.imageResize
     events:
       - http:
-          path: imageResize/{width}/{key}
+          path: imageResize/{data}/{key}
           method: get
           cors: true          
         
