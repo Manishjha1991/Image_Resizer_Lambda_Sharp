@@ -19,11 +19,11 @@ module.exports.imageResize = async  (event, context, callback) => {
     let finalWidth,finalHeight,c_fill,c_fit;
     if(pathParams.length===3){
         if(pathParams[0]==="c_fill"){
-            c_fill="max";
+            c_fill="min";
             c_fit=null;
         }
         else if (pathParams[0]==="c_fit"){
-            c_fit="min";
+            c_fit="max";
             c_fill=null;
         }
         finalWidth= pathParams[1].split("_");
@@ -53,15 +53,15 @@ S3.getObject({Bucket: BUCKET, Key: key}).promise()
   .then((data) => {
       console.log(c_fill)
       console.log(pathParams.length);
-    if(c_fill==="max" && pathParams.length == 3){
-        console.log("here in max");
-        return Sharp(data.Body).resize(finalWidth ,finalHeight).max().toBuffer()
-    }
-     else if(c_fit==="min" && pathParams.length == 3){
+    if(c_fill==="min" && pathParams.length == 3){
         console.log("here in min");
         return Sharp(data.Body).resize(finalWidth ,finalHeight).min().toBuffer()
     }
-     else if(c_fit!== "min" && c_fill !== "min"  &&  pathParams.length <=2) {
+     else if(c_fit==="max" && pathParams.length == 3){
+        console.log("here in max");
+        return Sharp(data.Body).resize(finalWidth ,finalHeight).max().toBuffer()
+    }
+     else if(c_fit!== "max" && c_fill !== "min"  &&  pathParams.length <=2) {
         console.log("here no min no max");
         return Sharp(data.Body).resize(finalWidth ,finalHeight).toBuffer()
     }
